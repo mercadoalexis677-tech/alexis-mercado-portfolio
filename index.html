@@ -135,7 +135,7 @@
         .about-card{background:var(--gradient-dark);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden}
         .about-card::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle at 70% 30%,rgba(59,130,246,.07),transparent 50%)}
         .about-card-inner{position:relative;z-index:2}
-        .ac-initials{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:700;line-height:1;background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.5rem}
+        .ac-initials{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:700;line-height:1.15;background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.5rem;padding-bottom:.1rem}
         .ac-label{font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gray-400);margin-bottom:.4rem}
         .ac-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:.2rem}
         .ac-role{font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--gray-400)}
@@ -374,7 +374,6 @@
             <li><a href="#timeline" onclick="closeNav()">Trayectoria</a></li>
             <li><a href="#skills" onclick="closeNav()">Competencias</a></li>
             <li><a href="#profile" onclick="closeNav()">Perfil</a></li>
-            <li><a href="#resume" onclick="closeNav()">Résumé</a></li>
             <li><a href="#contact" onclick="closeNav()" class="nav-cta">Contacto</a></li>
         </ul>
         <button class="menu-btn" id="menuBtn" onclick="toggleNav()" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -399,10 +398,6 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 Contactar
             </a>
-            <button class="btn btn-outline" onclick="openPdfViewer()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Ver résumé
-            </button>
             <button class="btn btn-outline" onclick="openModal('resume')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 Vista rápida
@@ -622,31 +617,6 @@
     </div>
 </section>
 
-<!-- ═══════ RESUME / CV ═══════ -->
-<section class="resume-section" id="resume">
-    <div class="container">
-        <div class="resume-wrapper reveal">
-            <div class="resume-inner">
-                <div class="resume-text">
-                    <div class="badge">Résumé</div>
-                    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:.6rem">Mi documento profesional <span class="rha">completo</span></h3>
-                    <p style="font-size:.88rem;color:var(--gray-400);line-height:1.7;margin:0">Experiencia, formación, competencias y perfil. Disponible para visualizar o descargar.</p>
-                </div>
-                <div class="resume-actions" style="flex-shrink:0">
-                    <button class="resume-btn resume-btn-primary" onclick="openPdfViewer()">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ver résumé
-                    </button>
-                    <a href="resume-alexis-mercado.pdf" download class="resume-btn resume-btn-outline">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Descargar PDF
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ═══════ VISION ═══════ -->
 <div class="vision-band">
     <div class="vision-wrap reveal">
@@ -682,16 +652,6 @@
                         <div class="cm-text"><div class="cm-label">LinkedIn</div><div class="cm-value">Alexis Mercado</div></div>
                         <span class="cm-action">Ver perfil →</span>
                     </a>
-                    <div class="cm-item" onclick="copyEmail()" style="cursor:pointer">
-                        <div class="cm-icon bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
-                        <div class="cm-text"><div class="cm-label">Copiar correo</div><div class="cm-value">Clic para copiar al portapapeles</div></div>
-                        <span class="cm-action">Copiar</span>
-                    </div>
-                    <div class="cm-item" onclick="copyPhone()" style="cursor:pointer">
-                        <div class="cm-icon gr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
-                        <div class="cm-text"><div class="cm-label">Copiar teléfono</div><div class="cm-value">Clic para copiar al portapapeles</div></div>
-                        <span class="cm-action">Copiar</span>
-                    </div>
                 </div>
             </div>
             <div class="contact-form reveal rd4" id="contactForm">
